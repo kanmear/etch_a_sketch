@@ -26,6 +26,9 @@
 .grid-container .grid-row .cell:hover {
   background-color: orange;
 }
+.grid-container .grid-row .cell-active {
+  background-color: red;
+}
 
 .slider-value {
   color: white;
