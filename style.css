@@ -9,18 +9,21 @@
   height: 350px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
-
-.grid-row {
+.grid-container .grid-row {
+  height: 100%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
-
-.cell {
+.grid-container .grid-row .cell {
+  height: 100%;
+  width: 100%;
   background-color: yellow;
   outline: 1px solid black;
 }
-
-.cell:hover {
+.grid-container .grid-row .cell:hover {
   background-color: orange;
 }
 
