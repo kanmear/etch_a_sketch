@@ -1,6 +1,10 @@
 const gridContainer = document.querySelector('.grid-container')
+const slider = document.querySelector('.slider')
+const sliderValue = document.querySelector('.slider-value')
 
 function generateGrid(size) {
+    document.querySelectorAll('.cell').forEach(c => c.remove())
+
     const grid = []
     const gridSide = getComputedStyle(gridContainer).height.slice(0, -2)
     for (let i = 0; i < size; i++) {
@@ -17,8 +21,12 @@ function generateGrid(size) {
         c.style.height = gridSide / size + 'px'
         c.style.width = gridSide / size + 'px'
     })
-    
 }
 
 //testing
-generateGrid(28)
+generateGrid(16)
+
+slider.addEventListener('change', () => {
+    generateGrid(slider.value)
+    sliderValue.innerHTML = slider.value + 'x' + slider.value
+})

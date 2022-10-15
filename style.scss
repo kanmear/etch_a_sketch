@@ -10,18 +10,21 @@
 
     display: flex;
     flex-direction: column;
-    // gap: 2px;
 }
 
 .grid-row {
     display: flex;
-    // gap: 2px;
 }
 
 .cell {
-    width: 10px;
-    height: 10px;
-
     background-color: yellow;
     outline: 1px solid black;
+}
+
+.cell:hover {
+    background-color: orange;
+}
+
+.slider-value {
+    color: white;
 }
