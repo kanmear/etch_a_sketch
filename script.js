@@ -39,6 +39,10 @@ gridContainer.addEventListener('mouseover', (event) => {
     }
 })
 
+gridContainer.addEventListener('mousedown', (event) => {
+    event.target.classList.add('cell-active')
+})
+
 document.body.addEventListener('dragstart', (element) => element.preventDefault())
 
 //testing
