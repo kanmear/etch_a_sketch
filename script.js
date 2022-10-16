@@ -1,3 +1,4 @@
+//TODO add eraser support
 const gridContainer = document.querySelector('.grid-container')
 const slider = document.querySelector('.slider')
 const sliderValue = document.querySelector('.slider-value')
