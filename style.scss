@@ -17,64 +17,67 @@ body {
     
     padding-top: 5vh;
     
-        .header {
-            color: wheat;
-        }
+    .header {
+        color: wheat;
+    }
 
-        .grid-container {
-            width: 350px;
-            height: 350px;
+    .grid-container {
+        width: 350px;
+        height: 350px;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .grid-row {
+            height: 100%;
+            width: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
 
-            .grid-row {
+            .cell {
                 height: 100%;
                 width: 100%;
-                display: flex;
-                justify-content: space-between;
-
-                .cell {
-                    height: 100%;
-                    width: 100%;
-                    background-color: yellow;
-                    outline: 1px solid black;
-                }
-                
-                .cell:hover {
-                    background-color: orange;
-                }
-                
-                .cell-active {
-                    background-color: red;
-                }
+                background-color: yellow;
+                outline: 1px solid black;
             }
+            
+            .cell:hover {
+                background-color: orange;
+            }
+            
+            .cell-active {
+                background-color: red;
+            }
+        }
+    }
+        
+    .slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75vh;
+        
+        font-size: 18pt;
+
+        .slider-value {
+            color: white;
         }
         
-        .slider-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            font-size: 18pt;
-
-            .slider-value {
-                color: white;
-            }
-            
-            .slider {
-                appearance: none;
-                width: 100%;
-                height: 20px;
-                background: white;
-            }
-            
-            .slider::-webkit-slider-thumb {
-                appearance: none;
-                width: 20px;
-                height: 20px;
-                background: orange;
-            }
+        .slider {
+            appearance: none;
+            width: 100%;
+            height: 20px;
+            background: white;
+            border: solid 1px white;
+            border-radius: 2px;
         }
+        
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: orange;
+        }
+    }
 }
