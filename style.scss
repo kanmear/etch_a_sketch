@@ -20,34 +20,60 @@ body {
     .header {
         color: wheat;
     }
-
-    .grid-container {
-        width: 350px;
-        height: 350px;
+    
+    .grid-and-buttons-container {
+        --grid-dimension: 350px;
+        --button-container-width: 90px;
 
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        width: var(var(--grid-dimension)) + (2 * var(--button-container-width));
 
-        .grid-row {
-            height: 100%;
-            width: 100%;
+        .button-container {
+            width: 90px;
+            position: relative;
+            right: 2vw;
+            
             display: flex;
+            flex-direction: column;
+            gap: 2vh;
+
+            button {
+                width: 90px;
+                height: 35px;
+                
+                color: wheat;
+                font-size: 14pt;
+            }
+        }
+
+        .grid-container {
+            width: var(--grid-dimension);
+            height: var(--grid-dimension);
+
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
 
-            .cell {
+            .grid-row {
                 height: 100%;
                 width: 100%;
-                background-color: yellow;
-                outline: 1px solid black;
-            }
-            
-            .cell:hover {
-                background-color: orange;
-            }
-            
-            .cell-active {
-                background-color: red;
+                display: flex;
+                justify-content: space-between;
+
+                .cell {
+                    height: 100%;
+                    width: 100%;
+                    background-color: yellow;
+                    outline: 1px solid black;
+                }
+                
+                .cell:hover {
+                    background-color: orange;
+                }
+                
+                .cell-active {
+                    background-color: red;
+                }
             }
         }
     }

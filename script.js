@@ -3,7 +3,16 @@ const gridContainer = document.querySelector('.grid-container')
 const slider = document.querySelector('.slider')
 const sliderValue = document.querySelector('.slider-value')
 
+const pencilButton = document.querySelector('.pencil-button')
+const eraserButton = document.querySelector('.eraser-button')
+
+pencilButton.addEventListener('click', () => currentMode = Modes.PENCIL)
+eraserButton.addEventListener('click', () => currentMode = Modes.ERASER)
+
+const Modes = {PENCIL: true, ERASER: false}
+
 let isMouseDown = false
+let currentMode = Modes.PENCIL
 
 document.body.onmousedown = () => isMouseDown = true
 document.body.onmouseup = () => isMouseDown = false
@@ -14,12 +23,19 @@ document.body.addEventListener('dragstart', (element) => element.preventDefault(
 gridContainer.addEventListener('mouseover', (event) => {
     let element = event.target
     if (isMouseDown) {
-        element.classList.add('cell-active')
+        if (currentMode == Modes.PENCIL)
+            element.classList.add('cell-active')
+        else if (currentMode == Modes.ERASER)
+            element.classList.remove('cell-active')
     }
 })
 
 gridContainer.addEventListener('mousedown', (event) => {
-    event.target.classList.add('cell-active')
+    let element = event.target
+    if (currentMode == Modes.PENCIL)
+        element.classList.add('cell-active')
+    else if (currentMode == Modes.ERASER)
+        element.classList.remove('cell-active')
 })
 
 slider.addEventListener('input', () => {
