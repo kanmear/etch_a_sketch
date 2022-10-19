@@ -21,8 +21,9 @@ body {
 }
 .main .grid-and-buttons-container {
   --grid-dimension: 350px;
+  --button-container-width: 90px;
   display: flex;
-  width: 530px;
+  width: calc(var(--grid-dimension) + var(--button-container-width) * 2);
 }
 .main .grid-and-buttons-container .button-container {
   width: 90px;
@@ -35,8 +36,20 @@ body {
 .main .grid-and-buttons-container .button-container button {
   width: 90px;
   height: 35px;
+  background-color: black;
+  border: solid 1px white;
+  border-radius: 4px;
   color: wheat;
   font-size: 14pt;
+  transition: 0.5s;
+}
+.main .grid-and-buttons-container .button-container button:hover {
+  background-color: dimgray;
+  transition: 0.5s;
+}
+.main .grid-and-buttons-container .button-container .active-button {
+  background-color: white;
+  transition: 0.5s;
 }
 .main .grid-and-buttons-container .grid-container {
   width: var(--grid-dimension);

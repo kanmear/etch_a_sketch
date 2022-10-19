@@ -26,7 +26,7 @@ body {
         --button-container-width: 90px;
 
         display: flex;
-        width: var(var(--grid-dimension)) + (2 * var(--button-container-width));
+        width: calc(var(--grid-dimension) + var(--button-container-width) * 2);
 
         .button-container {
             width: 90px;
@@ -40,9 +40,24 @@ body {
             button {
                 width: 90px;
                 height: 35px;
+                background-color: black;
+                border: solid 1px white;
+                border-radius: 4px;
                 
                 color: wheat;
                 font-size: 14pt;
+
+                transition: 0.5s;
+            }
+            
+            button:hover {
+                background-color: dimgray;                
+                transition: 0.5s;
+            }
+            
+            .active-button {
+                background-color: white;
+                transition: 0.5s;
             }
         }
 
