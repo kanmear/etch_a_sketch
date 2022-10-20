@@ -4,6 +4,7 @@ const sliderValue = document.querySelector('.slider-value')
 
 const pencilButton = document.querySelector('.pencil-button')
 const eraserButton = document.querySelector('.eraser-button')
+const clearButton = document.querySelector('.clear-button')
 
 pencilButton.addEventListener('click', () => {
     currentMode = Modes.PENCIL
@@ -15,6 +16,12 @@ eraserButton.addEventListener('click', () => {
     currentMode = Modes.ERASER
     eraserButton.classList.add('active-button')
     pencilButton.classList.remove('active-button')
+})
+
+clearButton.addEventListener('click', () => {
+    gridContainer.childNodes.forEach(row => {
+        row.childNodes.forEach(element => element.classList.remove('cell-active'))
+    })
 })
 
 const Modes = {PENCIL: 'pencil', ERASER: 'eraser'}

@@ -53,6 +53,8 @@ body {
                 color: var(--contrast-wheat);
                 font-size: 14pt;
 
+                cursor: pointer;
+
                 transition: 0.5s;
             }
             
@@ -67,7 +69,12 @@ body {
             }
             
             .clear-button {
-                justify-self: flex-end;
+                margin-top: auto;
+            }
+            
+            button:active {
+                border: solid 1px var(--contrast-neon-pink);
+                transition: 0s;
             }
         }
 
@@ -122,6 +129,8 @@ body {
             background: var(--main-blue);
             border: solid 1px var(--accent-ocean);
             border-radius: 2px;
+
+            cursor: pointer;
         }
         
         .slider::-webkit-slider-thumb {
