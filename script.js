@@ -1,4 +1,3 @@
-//TODO add eraser support
 const gridContainer = document.querySelector('.grid-container')
 const slider = document.querySelector('.slider')
 const sliderValue = document.querySelector('.slider-value')
@@ -6,10 +5,19 @@ const sliderValue = document.querySelector('.slider-value')
 const pencilButton = document.querySelector('.pencil-button')
 const eraserButton = document.querySelector('.eraser-button')
 
-pencilButton.addEventListener('click', () => currentMode = Modes.PENCIL)
-eraserButton.addEventListener('click', () => currentMode = Modes.ERASER)
+pencilButton.addEventListener('click', () => {
+    currentMode = Modes.PENCIL
+    pencilButton.classList.add('active-button')
+    eraserButton.classList.remove('active-button')
+})
 
-const Modes = {PENCIL: true, ERASER: false}
+eraserButton.addEventListener('click', () => {
+    currentMode = Modes.ERASER
+    eraserButton.classList.add('active-button')
+    pencilButton.classList.remove('active-button')
+})
+
+const Modes = {PENCIL: 'pencil', ERASER: 'eraser'}
 
 let isMouseDown = false
 let currentMode = Modes.PENCIL
