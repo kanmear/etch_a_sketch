@@ -1,4 +1,9 @@
 * {
+  --main-blue: #0A2342;
+  --accent-ocean: #2CA58D;
+  --accent-salad: #84BC9C;
+  --contrast-wheat: #FFFDF7;
+  --contrast-neon-pink: #F46197;
   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -17,7 +22,7 @@ body {
   padding-top: 5vh;
 }
 .main .header {
-  color: wheat;
+  color: var(--contrast-wheat);
 }
 .main .grid-and-buttons-container {
   --grid-dimension: 350px;
@@ -31,25 +36,29 @@ body {
   right: 2vw;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 2vh;
 }
 .main .grid-and-buttons-container .button-container button {
   width: 90px;
   height: 35px;
-  background-color: black;
-  border: solid 1px white;
+  background-color: var(--main-blue);
+  border: solid 1px var(--accent-ocean);
   border-radius: 4px;
-  color: wheat;
+  color: var(--contrast-wheat);
   font-size: 14pt;
   transition: 0.5s;
 }
 .main .grid-and-buttons-container .button-container button:hover {
-  background-color: dimgray;
-  transition: 0.5s;
+  background-color: rgba(var(--main-blue), 0);
+  transition: 0.9s;
 }
 .main .grid-and-buttons-container .button-container .active-button {
-  background-color: white;
+  border: solid 1px var(--contrast-neon-pink);
   transition: 0.5s;
+}
+.main .grid-and-buttons-container .button-container .clear-button {
+  justify-self: flex-end;
 }
 .main .grid-and-buttons-container .grid-container {
   width: var(--grid-dimension);
@@ -67,14 +76,14 @@ body {
 .main .grid-and-buttons-container .grid-container .grid-row .cell {
   height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: var(--accent-ocean);
   outline: 1px solid black;
 }
 .main .grid-and-buttons-container .grid-container .grid-row .cell:hover {
-  background-color: orange;
+  background-color: var(--accent-salad);
 }
 .main .grid-and-buttons-container .grid-container .grid-row .cell-active {
-  background-color: red;
+  background-color: var(--contrast-neon-pink);
 }
 .main .slider-container {
   display: flex;
@@ -84,7 +93,7 @@ body {
   font-size: 18pt;
 }
 .main .slider-container .slider-value {
-  color: white;
+  color: var(--contrast-wheat);
 }
 .main .slider-container .slider {
   -webkit-appearance: none;
@@ -92,8 +101,8 @@ body {
           appearance: none;
   width: 100%;
   height: 20px;
-  background: white;
-  border: solid 1px white;
+  background: var(--main-blue);
+  border: solid 1px var(--accent-ocean);
   border-radius: 2px;
 }
 .main .slider-container .slider::-webkit-slider-thumb {
@@ -101,5 +110,5 @@ body {
           appearance: none;
   width: 20px;
   height: 20px;
-  background: orange;
+  background: var(--accent-salad);
 }/*# sourceMappingURL=style.css.map */
