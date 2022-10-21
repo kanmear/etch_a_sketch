@@ -6,6 +6,17 @@ const pencilButton = document.querySelector('.pencil-button')
 const eraserButton = document.querySelector('.eraser-button')
 const clearButton = document.querySelector('.clear-button')
 
+const Modes = {PENCIL: 'pencil', ERASER: 'eraser'}
+
+let isMouseDown = false
+let currentMode = Modes.PENCIL
+
+document.body.onmousedown = () => isMouseDown = true
+document.body.onmouseup = () => isMouseDown = false
+document.body.onmouseleave = () => isMouseDown = false
+
+document.body.addEventListener('dragstart', (element) => element.preventDefault())
+
 pencilButton.addEventListener('click', () => {
     currentMode = Modes.PENCIL
     pencilButton.classList.add('active-button')
@@ -23,17 +34,6 @@ clearButton.addEventListener('click', () => {
         row.childNodes.forEach(element => element.classList.remove('cell-active'))
     })
 })
-
-const Modes = {PENCIL: 'pencil', ERASER: 'eraser'}
-
-let isMouseDown = false
-let currentMode = Modes.PENCIL
-
-document.body.onmousedown = () => isMouseDown = true
-document.body.onmouseup = () => isMouseDown = false
-document.body.onmouseleave = () => isMouseDown = false
-
-document.body.addEventListener('dragstart', (element) => element.preventDefault())
 
 gridContainer.addEventListener('mouseover', (event) => {
     let element = event.target
@@ -55,7 +55,6 @@ gridContainer.addEventListener('mousedown', (event) => {
 
 slider.addEventListener('input', () => {
     generateGrid(slider.value)
-    sliderValue.innerHTML = slider.value + 'x' + slider.value
 })
 
 function generateGrid(size) {
@@ -72,8 +71,8 @@ function generateGrid(size) {
         }
         gridContainer.appendChild(row)
     }
+
+    sliderValue.innerHTML = slider.value + 'x' + slider.value
 }
 
-//testing
 generateGrid(12)
-sliderValue.innerHTML = slider.value + 'x' + slider.value
