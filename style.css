@@ -1,9 +1,12 @@
-* {
+:root {
   --main-blue: #0A2342;
   --accent-ocean: #2CA58D;
   --accent-salad: #84BC9C;
   --contrast-wheat: #FFFDF7;
   --contrast-neon-pink: #F46197;
+}
+
+* {
   font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -15,11 +18,11 @@ body {
 }
 
 .main {
+  padding-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5vh;
-  padding-top: 5vh;
 }
 .main .header {
   color: var(--contrast-wheat);
@@ -27,8 +30,8 @@ body {
 .main .grid-and-buttons-container {
   --grid-dimension: 350px;
   --button-container-width: 90px;
-  display: flex;
   width: calc(var(--grid-dimension) + var(--button-container-width) * 2);
+  display: flex;
 }
 .main .grid-and-buttons-container .button-container {
   width: 90px;
@@ -36,7 +39,6 @@ body {
   right: 2vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 2vh;
 }
 .main .grid-and-buttons-container .button-container button {
@@ -54,16 +56,16 @@ body {
   background-color: rgba(var(--main-blue), 0);
   transition: 0.9s;
 }
+.main .grid-and-buttons-container .button-container button:active {
+  border: solid 1px var(--contrast-neon-pink);
+  transition: 0s;
+}
 .main .grid-and-buttons-container .button-container .active-button {
   border: solid 1px var(--contrast-neon-pink);
   transition: 0.5s;
 }
 .main .grid-and-buttons-container .button-container .clear-button {
   margin-top: auto;
-}
-.main .grid-and-buttons-container .button-container button:active {
-  border: solid 1px var(--contrast-neon-pink);
-  transition: 0s;
 }
 .main .grid-and-buttons-container .grid-container {
   width: var(--grid-dimension);
